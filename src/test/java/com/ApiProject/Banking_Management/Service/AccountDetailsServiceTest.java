@@ -1,5 +1,5 @@
 package com.ApiProject.Banking_Management.Service;
-import com.ApiProject.Banking_Management.Enitity.AccountDetails;
+import com.ApiProject.Banking_Management.Entity.AccountDetails;
 import com.ApiProject.Banking_Management.Repository.AccountDetailsRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

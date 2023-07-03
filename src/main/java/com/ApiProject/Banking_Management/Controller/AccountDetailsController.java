@@ -1,6 +1,6 @@
 package com.ApiProject.Banking_Management.Controller;
 
-import com.ApiProject.Banking_Management.Enitity.AccountDetails;
+import com.ApiProject.Banking_Management.Entity.AccountDetails;
 import com.ApiProject.Banking_Management.Service.AccountDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,6 +1,6 @@
 package com.ApiProject.Banking_Management.Service;
 
-import com.ApiProject.Banking_Management.Enitity.Customer;
+import com.ApiProject.Banking_Management.Entity.Customer;
 import com.ApiProject.Banking_Management.Repository.CustomerRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

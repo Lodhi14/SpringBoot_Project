@@ -1,4 +1,4 @@
-package com.ApiProject.Banking_Management.Enitity;
+package com.ApiProject.Banking_Management.Entity;
 
 import javax.persistence.*;
 

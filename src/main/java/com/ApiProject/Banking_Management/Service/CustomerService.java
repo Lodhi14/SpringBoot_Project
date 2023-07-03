@@ -1,6 +1,6 @@
 package com.ApiProject.Banking_Management.Service;
 
-import com.ApiProject.Banking_Management.Enitity.Customer;
+import com.ApiProject.Banking_Management.Entity.Customer;
 import com.ApiProject.Banking_Management.Repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
