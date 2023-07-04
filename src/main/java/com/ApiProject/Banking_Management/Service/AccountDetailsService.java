@@ -55,16 +55,7 @@ public class AccountDetailsService {
             return null;
         }
     }
-    //    public AccountDetails modifyAccount(Long account_no, AccountDetails updated) {
-//        AccountDetails accountDetails=accountDetailsRepo.findById(account_no).orElse(null);
-//        if(accountDetails!=null)
-//        {
-//            return accountDetailsRepo.save(updated);
-//        }
-//        else {
-//            return null;
-//        }
-//    }
+
     public boolean deleteAccount(Long account_no) {
         AccountDetails account=accountDetailsRepo.findById(account_no).orElse(null);
         if(account!=null)
@@ -83,20 +74,5 @@ public class AccountDetailsService {
         AccountDetails accountDetails=accountDetailsRepo.findById(account_no).orElse(null);
         return accountDetails;
     }
-
-//    public void deleteAccountAndCustomer(long account_no) {
-//        AccountDetails accountToDelete=accountDetailsRepo.findById(account_no).orElseThrow(()-> new RuntimeException("Account not found."));
-//        Customer customer=accountToDelete.getCustomer();
-//        List<AccountDetails> accountDetails=customer.a
-//        if(accountDetails.size() > 1)
-//        {
-//            accountDetailsRepo.deleteByCustomerId(customer_id);
-//        } else if (accountCount==1) {
-//            accountDetailsRepo.deleteByCustomerId(customer_id);
-//            customerRepo.deleteById(customer_id);
-//        }
-//        else {
-//            throw new RuntimeException("Customer does not have any accounts.");
-//        }
 
 }
