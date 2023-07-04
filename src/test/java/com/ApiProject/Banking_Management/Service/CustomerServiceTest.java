@@ -2,6 +2,7 @@ package com.ApiProject.Banking_Management.Service;
 
 import com.ApiProject.Banking_Management.Entity.Customer;
 import com.ApiProject.Banking_Management.Repository.CustomerRepository;
+import com.ApiProject.Banking_Management.Service.CustomerService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -31,8 +32,8 @@ public class CustomerServiceTest {
     @Test
     public void testGetAllCustomer() {
         List<Customer> customerList = new ArrayList<>();
-        customerList.add(new Customer(1, "John", "Doe", "Address 1", "Branch 1", "1234567890", "Male", "2000-01-01", "123456789"));
-        customerList.add(new Customer(2, "Jane", "Smith", "Address 2", "Branch 2", "9876543210", "Female", "2000-02-02", "987654321"));
+        customerList.add(new Customer());
+        customerList.add(new Customer());
         when(customerRepository.findAll()).thenReturn(customerList);
         List<Customer> result = customerService.getAllCustomer();
         verify(customerRepository, times(1)).findAll();
@@ -42,21 +43,21 @@ public class CustomerServiceTest {
 
     @Test
     public void testAddCustomer() {
-        Customer customer = new Customer(1, "John", "Doe", "Address 1", "Branch 1", "1234567890", "Male", "2000-01-01", "123456789");
+        Customer customer = new Customer();
         customerService.addCustomer(customer);
         verify(customerRepository, times(1)).save(customer);
     }
 
     @Test
     public void testUpdateCustomer() {
-        Customer customer = new Customer(1, "John", "Doe", "Address 1", "Branch 1", "1234567890", "Male", "2000-01-01", "123456789");
+        Customer customer = new Customer();
         customerService.updateCustomer(1, customer);
         verify(customerRepository, times(1)).save(customer);
     }
 
     @Test
     public void testDeleteCustomer_existingCustomer() {
-        Customer customer = new Customer(1, "John", "Doe", "Address 1", "Branch 1", "1234567890", "Male", "2000-01-01", "123456789");
+        Customer customer = new Customer();
         when(customerRepository.findById(1)).thenReturn(Optional.of(customer));
         boolean result = customerService.deleteCustomer(1);
         verify(customerRepository, times(1)).findById(1);
@@ -74,7 +75,7 @@ public class CustomerServiceTest {
 
     @Test
     public void testGetCustomer_existingCustomer() {
-        Customer customer = new Customer(1, "John", "Doe", "Address 1", "Branch 1", "1234567890", "Male", "2000-01-01", "123456789");
+        Customer customer = new Customer();
         when(customerRepository.findById(1)).thenReturn(Optional.of(customer));
         Customer result = customerService.getCustomer(1);
         verify(customerRepository, times(1)).findById(1);
@@ -89,4 +90,3 @@ public class CustomerServiceTest {
         assertNull(result);
     }
 }
-

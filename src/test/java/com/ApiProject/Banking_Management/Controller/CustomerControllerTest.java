@@ -32,8 +32,8 @@ public class CustomerControllerTest {
     @Test
     public void testGetAllCustomer() {
         List<Customer> customerList = new ArrayList<>();
-        customerList.add(new Customer(1, "John", "Doe", "Address 1", "Branch 1", "1234567890", "Male", "2000-01-01", "123456789"));
-        customerList.add(new Customer(2, "Jane", "Smith", "Address 2", "Branch 2", "9876543210", "Female", "2000-02-02", "987654321"));
+        customerList.add(new Customer());
+        customerList.add(new Customer());
         when(customerService.getAllCustomer()).thenReturn(customerList);
         List<Customer> result = customerController.getAllCustomer();
         verify(customerService, times(1)).getAllCustomer();
@@ -42,7 +42,7 @@ public class CustomerControllerTest {
 
     @Test
     public void testGetCustomer() {
-        Customer customer = new Customer(1, "John", "Doe", "Address 1", "Branch 1", "1234567890", "Male", "2000-01-01", "123456789");
+        Customer customer = new Customer();
         when(customerService.getCustomer(1)).thenReturn(customer);
         Customer result = customerController.getCustomer(1);
         verify(customerService, times(1)).getCustomer(1);
@@ -51,15 +51,14 @@ public class CustomerControllerTest {
 
     @Test
     public void testAddCustomer() {
-
-        Customer customer = new Customer(1, "John", "Doe", "Address 1", "Branch 1", "1234567890", "Male", "2000-01-01", "123456789");
+        Customer customer = new Customer();
         customerController.addCustomer(customer);
         verify(customerService, times(1)).addCustomer(customer);
     }
 
     @Test
     public void testUpdateCustomer() {
-        Customer customer = new Customer(1, "John", "Doe", "Address 1", "Branch 1", "1234567890", "Male", "2000-01-01", "123456789");
+        Customer customer = new Customer();
         customerController.updateCustomer(1, customer);
         verify(customerService, times(1)).updateCustomer(1, customer);
     }
@@ -82,4 +81,3 @@ public class CustomerControllerTest {
         assertEquals("Customer not found", response.getBody());
     }
 }
-

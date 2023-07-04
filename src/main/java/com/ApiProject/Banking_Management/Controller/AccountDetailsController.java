@@ -51,18 +51,6 @@ public class AccountDetailsController {
         }
     }
 
-//    @PutMapping("{account_no}/modify")
-//    public ResponseEntity<AccountDetails> modifyAccount(@PathVariable Long account_no, @RequestBody AccountDetails updated){
-//        AccountDetails modifiedAccount=accountServ.modifyAccount(account_no,updated);
-//        if(modifiedAccount!=null){
-//            return ResponseEntity.ok(modifiedAccount);
-//        }
-//        else
-//        {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
-
     @DeleteMapping("/delete/{account_no}")
     public ResponseEntity<String> deleteAccount(@PathVariable Long account_no)
     {
@@ -93,15 +81,4 @@ public class AccountDetailsController {
         return accountServ.getAccount(account_no);
     }
 
-//    @DeleteMapping("customers/{account_no}/accounts")
-//    public ResponseEntity<String> deleteCustomerAndAccount(@PathVariable("account_no") long account_no)
-//    {
-//        try {
-//                accountServ.deleteAccountAndCustomer(account_no);
-//                return ResponseEntity.ok("Account Deleted successfully.");
-//            }
-//            catch(RuntimeException e){
-//                return ResponseEntity.badRequest().body(e.getMessage());
-//            }
-//    }
 }
