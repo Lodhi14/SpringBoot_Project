@@ -1,5 +1,4 @@
 package com.ApiProject.Banking_Management.controller;
-
 import com.ApiProject.Banking_Management.dto.AccountDetailsUpdateDto;
 import com.ApiProject.Banking_Management.entity.AccountDetails;
 import com.ApiProject.Banking_Management.service.AccountDetailsService;
