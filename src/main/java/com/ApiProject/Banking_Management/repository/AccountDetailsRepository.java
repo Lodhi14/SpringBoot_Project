@@ -1,6 +1,6 @@
-package com.ApiProject.Banking_Management.Repository;
+package com.ApiProject.Banking_Management.repository;
 
-import com.ApiProject.Banking_Management.Entity.AccountDetails;
+import com.ApiProject.Banking_Management.entity.AccountDetails;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
